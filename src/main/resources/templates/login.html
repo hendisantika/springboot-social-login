@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>Spring Social Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="alert alert-info" th:if="${param.logout}">You have been logged out</div>
+    <div class="alert alert-danger" th:if="${param.error}">There was an error, please try again</div>
+
+    <h1 class="col-sm-12">Login</h1>
+    <form method="POST" th:action="@{/login}">
+        <div class="row col-sm-6">
+            <div class="form-group">
+                <label class="col-sm-3">Username</label>
+                <span class="col-sm-9"><input class="form-control" name="username" type="text"/></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label class="col-sm-3">Password</label>
+                <span class="col-sm-9"><input class="form-control" name="password" type="password"/></span>
+            </div>
+
+            <div class="col-sm-12">
+                <input class="btn btn-default" type="submit" value="Login"/>
+            </div>
+        </div>
+    </form>
+    <div class="clearfix"></div>
+    <br/>
+    <br/>
+    <div class="col-sm-12">
+        <form action="/signin/facebook" method="POST">
+            <input name="scope" type="hidden" value="public_profile"/>
+            <input class="btn btn-primary" type="submit" value="Login using Facebook"/>
+        </form>
+    </div>
+
+
+</div>
+</body>
+</html>
