@@ -1,6 +1,7 @@
 package com.hendisantika.springbootsociallogin.config;
 
 import com.hendisantika.springbootsociallogin.security.FacebookConnectionSignup;
+import com.hendisantika.springbootsociallogin.security.FacebookSignInAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
